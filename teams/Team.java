@@ -1,15 +1,7 @@
-package edu.marist.cmpt220l.teams;
-
-	Team[] PeakNextTeams(){
-	
-	}
-
-	Team[] GetNextTeams(){
-		
-	}
+package teams;
 
 	
-import edu.marist.cmpt220l.olympians.Olympian;
+import olympians.Olympian;
 
 /**
  * The Team class represents two olympians that have been paired up for the games

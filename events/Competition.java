@@ -1,7 +1,6 @@
-/*package edu.marist.cmpt220l.competitions;
+package events;
 
-import edu.marist.cmpt220l.events.Event;
-import edu.marist.cmpt220l.teams.Team; */
+import teams.Team; 
 
 /**
  * The implementation of the ICompetition interface.  This implementation allows multiple instances of a Competition

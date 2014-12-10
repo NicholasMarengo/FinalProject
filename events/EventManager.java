@@ -1,10 +1,13 @@
-package edu.marist.cmpt220l.events;
+package events;
+
+import teams.Team;
 
 /**
  * The event manager manages the events in the application
  */
 public class EventManager {
     private Event[] events;
+    private Team[] teamArray;
 
     /**
      * Construct a new EventManager
@@ -18,6 +21,10 @@ public class EventManager {
                 new LadderBallEvent(),
                 new StickGameEvent()
         };
+    
+    
+    
+    
     }
 
     /**
@@ -28,4 +35,12 @@ public class EventManager {
     public Event[] getEvents() {
         return events;
     }
-}
+    
+    public Team[] getTeams() {
+    	return teamArray;
+    	
+    }
+    
+    }
+    
+    

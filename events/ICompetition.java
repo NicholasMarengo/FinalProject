@@ -1,4 +1,4 @@
-package competitions;
+package events;
 
 import Event;
 import Team;

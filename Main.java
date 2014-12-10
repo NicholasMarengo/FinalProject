@@ -1,17 +1,16 @@
 
-
-/*import edu.marist.cmpt220l.competitions.CompetitionManager;
-import edu.marist.cmpt220l.competitions.ICompetition;
-import edu.marist.cmpt220l.events.Event;
-import edu.marist.cmpt220l.events.EventManager;
-import edu.marist.cmpt220l.olympians.Olympian;
-import edu.marist.cmpt220l.olympians.OlympianManager;
-import edu.marist.cmpt220l.teams.Team;
-import edu.marist.cmpt220l.teams.TeamManager;
+import events.CompetitionManager;
+import events.Event;
+import events.EventManager;
+import events.ICompetition;
+import olympians.Olympian;
+import olympians.OlympianManager;
+import teams.Team;
+import teams.TeamManager;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader; */
+import java.io.InputStreamReader; 
 
 
 /**

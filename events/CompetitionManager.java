@@ -1,9 +1,11 @@
-package competitions;
+package events;
 
-import Event;
-import EventManager;
-import Team;
-import TeamManager;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+import teams.Team;
+import teams.TeamManager;
+import Queues.QueueItemList;
 
 /**
  * This class manages a list of competitions.
@@ -202,4 +204,17 @@ public class CompetitionManager {
         }
         return true;
     }
+    
+    public CompetitionManager(EventManager em, int EventNum){
+    	this.em = em;
+    	QueueItemList CompetitionList = new QueueItemList();
+    	CompetitionList.createQueue(em.getTeams());
+    	StackItemList placeStack = new StackItemList();
+    	int[] currentComps = new int[em.getEvents().length];
+    	BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
+    }
+    
+    
+    
+    
 }
