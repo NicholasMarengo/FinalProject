@@ -8,6 +8,7 @@ import teams.Team;
 public class EventManager {
     private Event[] events;
     private Team[] teamArray;
+    private int i;
 
     /**
      * Construct a new EventManager
@@ -39,6 +40,10 @@ public class EventManager {
     public Team[] getTeams() {
     	return teamArray;
     	
+    }
+    
+    public Event getSingleEvent(int eventNum) {
+    	return events[i];
     }
     
     }

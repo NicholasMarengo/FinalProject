@@ -1,4 +1,3 @@
-
 import teams.Team; 
 
 
@@ -6,6 +5,7 @@ public class QueueItemList {
 
 	private QueueItem first;
 	private QueueItem currItem;
+	private Team team;
 	
 	
 	
@@ -79,7 +79,8 @@ public class QueueItemList {
 	}
 	
 	void ReturnTeams(Team winner, Team loser) {
-		
+		Enqueue(winner);
+		pushToStack(loser);
 	}
 	
 	public void createQueue(Team[] nugget) {
@@ -87,7 +88,15 @@ public class QueueItemList {
 		for (int i=0; i <nugget.length; i++)
 		q.Enqueue(nugget[i]);
 	}
+
+	public QueueItem getFirst() {
+		// TODO Auto-generated method stub
+		return first;
+	}
 	
+	public Team getTeam() {
+			return team;
+	}
 	
 	
 	

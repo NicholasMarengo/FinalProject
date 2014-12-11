@@ -1,7 +1,9 @@
 package events;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
 import teams.Team;
 import teams.TeamManager;
@@ -205,16 +207,62 @@ public class CompetitionManager {
         return true;
     }
     
-    public CompetitionManager(EventManager em, int EventNum){
+    public CompetitionManager(EventManager em, int EventNum) throws NumberFormatException, IOException{
     	this.em = em;
     	QueueItemList CompetitionList = new QueueItemList();
     	CompetitionList.createQueue(em.getTeams());
     	StackItemList placeStack = new StackItemList();
-    	int[] currentComps = new int[em.getEvents().length];
     	BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
+    	int[] doneEvents = new int[em.getEvents().length];
+    	
+    		Boolean check = false;
+    		int doneEventsNum = 0;
+    		
+    		while (check == false) {
+    			System.out.println("Select a number Event to play");
+    			EventNum = Integer.parseInt(userInput.readLine());
+    			
+    		if(!Arrays.asList(doneEvents).contains(EventNum)){
+    			check = true;
+    			
+    			doneEvents[doneEventsNum] = EventNum;
+    			doneEventsNum++;
+    			}
+    		}
+    		
+    		if(EventNum > em.getEvents().length){
+    			System.out.println("Enter a number between 1-8");
+    		} else {
+    			System.out.println("Creating a competition of " + em.getSingleEvent(EventNum));
+    			Event currEvent = em.getSingleEvent(EventNum);
+    			
+    			
+    			
+    			while (CompetitionList.peakNextTeams() !=null){
+    				Team[] playingTeams = CompetitionList.getNextTeams();
+    					Team brian = playingTeams[0];
+    					Team smith = playingTeams[1];
+    					Team[] results = compete(em.getSingleEvent(EventNum), brian, smith);
+    							CompetitionList.Enqueue(results[0]);
+    							placeStack.push(results[1]);
+    			}
+    		
+    			
+    					StackItemList stack = new StackItemList();
+    					stack.push(CompetitionList.getFirst().getTeam());
+    					int count = 1;
+    					System.out.println("Competition done: results");
+    						while (!StackItemList.isEmpty()){
+    							System.out.println(count + ": " + stack .pop().toString());
+    						}
+    					
+    		}
     }
+
+	private Team[] compete(Event singleEvent, Team chocolate, Team vanilla) {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
-    
-    
-    
+     
 }

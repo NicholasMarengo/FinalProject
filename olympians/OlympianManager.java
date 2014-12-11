@@ -1,4 +1,4 @@
-package edu.marist.cmpt220l.olympians;
+package olympians;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

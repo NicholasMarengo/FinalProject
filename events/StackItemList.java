@@ -28,4 +28,9 @@ public class StackItemList {
 				return returnTeam;
 		}
 	}
+
+	public static boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
